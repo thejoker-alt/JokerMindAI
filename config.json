@@ -1,0 +1,8 @@
+{
+    "api_key": "",
+    "model": "gemini-pro",
+    "offline_mode": false,
+    "language": "hindi",
+    "joker_persona": true,
+    "max_tokens": 500
+}
